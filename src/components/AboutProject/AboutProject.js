@@ -1,9 +1,12 @@
 import './AboutProject.css';
+import UnderlineTitle from '../UnderlineTitle/UnderlineTitle';
 
 function AboutProject() {
   return (
     <div className="project-description">
-      <h2 className="project-description__title">О проекте</h2>
+      <UnderlineTitle>
+        О проекте
+      </UnderlineTitle>
       <div className="project-description__info-container">
         <div className="project-description__text-section">
           <h2 className="project-description__text-title">

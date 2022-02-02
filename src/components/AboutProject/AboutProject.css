@@ -4,16 +4,6 @@
   width: available;
 }
 
-.project-description__title {
-  margin: 0;
-  padding: 0;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 22px;
-  letter-spacing: -0.04em;
-}
-
 .project-description__info-container {
   display: flex;
 }
@@ -72,9 +62,21 @@
   background-color: #F2F2F2;
 }
 
+.project-description__timeline-brief {
+  font-style: normal;
+  font-weight: 500;
+  text-align: center;
+  color: #A0A0A0;
+}
+
 @media screen and (min-width: 425px) {
   .project-description__timeline-weeks {
     height: 36px;
+  }
+
+  .project-description__timeline-brief, .project-description__timeline-weeks {
+    font-size: 14px;
+    line-height: 17px;
   }
 }
 
@@ -96,6 +98,11 @@
   .project-description__timeline-part_type_frontend {
     width: calc(100 * calc(100vw / 320));
     max-width: 100px;
+  }
+
+  .project-description__timeline-brief, .project-description__timeline-weeks {
+    font-size: 11px;
+    line-height: 13px;
   }
 }
 
