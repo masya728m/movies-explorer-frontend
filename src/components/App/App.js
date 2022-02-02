@@ -4,6 +4,7 @@ import Header from '../Header/Header';
 import Main from '../Main/Main';
 import '../../vendor/normalize.css';
 import '../../vendor/fonts/fonts.css'
+import Footer from '../Footer/Footer';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         </button>
       </Header>
       <Main/>
+      <Footer/>
     </div>
   );
 }
