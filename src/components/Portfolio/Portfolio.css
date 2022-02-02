@@ -1,0 +1,273 @@
+.portfolio {
+  margin: 0;
+  padding: 0;
+}
+
+.portfolio__image {
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.portfolio__name, .portfolio__text {
+  font-style: normal;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+
+.portfolio__contact-list {
+  display: flex;
+  flex-direction: row;
+}
+
+.portfolio__contact-link {
+  font-style: normal;
+  font-weight: 500;
+  text-decoration: none;
+  color: black !important;
+}
+
+.portfolio__contact-link:hover {
+  color: #A0A0A0;
+}
+
+.portfolio__label {
+  margin: 0;
+  padding: 0;
+  font-style: normal;
+  font-weight: normal;
+  color: #A0A0A0;
+  mix-blend-mode: normal;
+}
+
+.portfolio__list {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.portfolio__list-element {
+  list-style: none;
+  position: relative;
+  padding-bottom: 19px;
+  margin-top: 20px;
+}
+
+.portfolio__list-element:first-child {
+  margin: 0;
+}
+
+.portfolio__list-element:last-child {
+  padding: 0;
+}
+
+.portfolio__list-element:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-bottom: 1px solid #E6E6E6;
+}
+
+.portfolio__list-element:last-child:before {
+  content: none;
+}
+
+.portfolio__project-link {
+  margin: 0;
+  padding: 0;
+  display: block;
+  width: 100%;
+  font-style: normal;
+  font-weight: 500;
+  text-decoration: none;
+  color: black;
+  position: relative;
+  letter-spacing: -0.04em;
+}
+
+.portfolio__project-link:after {
+  content: '↗';
+  position: absolute;
+  right: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .portfolio {
+    margin: 110px 70px;
+  }
+
+  .portfolio__info-container {
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 66px 0 100px;
+    gap: 50px;
+  }
+
+  .portfolio__image {
+    width: calc(270px * calc(100vw / 1280));
+    max-width: 270px;
+    height: calc(327px * calc(100vw / 1280));
+    max-height: 327px;
+  }
+
+  .portfolio__name {
+    font-size: 50px;
+    line-height: 58px;
+    letter-spacing: -0.04em;
+    margin-bottom: 18px;
+  }
+
+  .portfolio__text {
+    margin-bottom: 26px;
+    max-width: 600px;
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .portfolio__text_type_title {
+    font-size: 18px;
+    line-height: 20px;
+  }
+
+  .portfolio__text-section {
+    position: relative;
+    flex: 1;
+  }
+
+  .portfolio__contact-list {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+    bottom: 0;
+  }
+
+  .portfolio__label {
+    font-size: 18px;
+    line-height: 20px;
+    margin-bottom: 50px;
+  }
+
+  .portfolio__project-link {
+    font-size: 30px;
+    line-height: 50px;
+  }
+}
+
+@media screen and (min-width: 425px) and (max-width: 768px) {
+  .portfolio {
+    margin: 140px 50px;
+  }
+
+  .portfolio__image {
+    width: calc(255 * calc(100vw / 768));
+    max-width: 255px;
+    height: calc(307 * calc(100vw / 768));
+    max-height: 307px;
+  }
+
+  .portfolio__info-container {
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 66px 0 90px;
+    gap: 49px;
+  }
+
+  .portfolio__name {
+    font-size: 40px;
+    line-height: 40px;
+    letter-spacing: -0.04em;
+    margin-bottom: 16px;
+  }
+
+  .portfolio__text {
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 20px;
+  }
+
+  .portfolio__text-section {
+    position: relative;
+  }
+
+  .portfolio__contact-list {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    gap: 26px;
+    bottom: 0;
+  }
+
+  .portfolio__label {
+    font-size: 18px;
+    line-height: 20px;
+  }
+
+  .portfolio__list {
+    margin-top: 50px;
+  }
+
+  .portfolio__project-link {
+    font-size: 28px;
+    line-height: 50px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .portfolio {
+    margin: 70px 14px;
+  }
+
+  .portfolio__image {
+    width: 292px;
+    height: 352px;
+  }
+
+  .portfolio__info-container {
+    display: flex;
+    flex-direction: column;
+    margin: 60px 0 40px;
+  }
+
+  .portfolio__text-section {
+    margin: 40px 0 0;
+  }
+
+  .portfolio__name {
+    font-size: 30px;
+    line-height: 36px;
+    letter-spacing: -0.04em;
+  }
+
+  .portfolio__text {
+    font-size: 11px;
+    line-height: 16px;
+    margin-top: 20px
+  }
+
+  .portfolio__contact-list {
+    margin: 40px 0 0;
+    padding: 0;
+    gap: 26px;
+  }
+
+  .portfolio__contact-link {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .portfolio__label {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .portfolio__list {
+    margin-top: 40px;
+  }
+
+  .portfolio__project-link {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
