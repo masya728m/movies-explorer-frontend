@@ -1,0 +1,144 @@
+.project-description {
+  margin: 70px 0;
+  padding: 0;
+  width: available;
+}
+
+.project-description__title {
+  margin: 0;
+  padding: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: -0.04em;
+}
+
+.project-description__info-container {
+  display: flex;
+}
+
+.project-description__text-title {
+  margin: 0;
+  padding: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: -0.04em;
+}
+
+.project-description__text-paragraph {
+  margin: 0;
+  padding: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 16px;
+}
+
+.project-description__timeline {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.project-description__timeline-part {
+  text-align: center;
+}
+
+.project-description__timeline-weeks {
+  margin: 0;
+  padding: 0;
+  height: 35px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 13px;
+}
+
+.project-description__timeline-part_type_backend {
+  flex: 1;
+}
+
+.project-description__timeline-weeks_type_frontend {
+  background-color: #2BE080;
+}
+
+.project-description__timeline-weeks_type_backend {
+  background-color: #F2F2F2;
+}
+
+@media screen and (min-width: 425px) {
+  .project-description__timeline-weeks {
+    height: 36px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .project-description {
+    margin: 70px 18px;
+  }
+
+  .project-description__info-container {
+    flex-direction: column;
+    gap: 56px;
+    margin: 60px 0;
+  }
+
+  .project-description__text-title {
+    margin-bottom: 16px;
+  }
+
+  .project-description__timeline-part_type_frontend {
+    width: calc(100 * calc(100vw / 320));
+    max-width: 100px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .project-description {
+    margin: 110px 70px;
+  }
+
+  .project-description__info-container {
+    gap: 40px;
+    margin: 70px 0 110px;
+  }
+
+  .project-description__text-title {
+    margin-bottom: 26px;
+  }
+
+  .project-description__timeline-part_type_frontend {
+    width: 228px;
+  }
+}
+
+@media screen and (min-width: 425px) and (max-width: 768px) {
+  .project-description {
+    margin: 90px 50px;
+  }
+
+  .project-description__info-container {
+    gap: 30px;
+    margin: 70px 0 93px;
+  }
+
+  .project-description__text-title {
+    margin-bottom: 22px;
+  }
+
+  .project-description__timeline-part_type_frontend {
+    width: 140px;
+  }
+}
+
+@media screen and (min-width: 425px) {
+  .project-description__info-container {
+    flex-direction: row;
+  }
+}
