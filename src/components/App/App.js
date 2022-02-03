@@ -5,6 +5,7 @@ import Main from '../Main/Main';
 import '../../vendor/normalize.css';
 import '../../vendor/fonts/fonts.css'
 import Footer from '../Footer/Footer';
+import Movies from '../Movies/Movies';
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
           Войти
         </button>
       </Header>
-      <Main/>
+      {/*<Main/>*/}
+      <Movies/>
       <Footer/>
     </div>
   );
