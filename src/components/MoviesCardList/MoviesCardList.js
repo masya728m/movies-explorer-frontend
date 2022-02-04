@@ -2,8 +2,8 @@ import './MoviesCardList.css';
 
 function MoviesCardList(props) {
   return (
-    <div>
-
+    <div className="movies">
+      {props.children}
     </div>
   );
 }
