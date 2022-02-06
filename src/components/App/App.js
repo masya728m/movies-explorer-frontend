@@ -108,7 +108,6 @@ function App() {
           exact path="/signin"
           element={
             <>
-              <Header onlyLogo={true}/>
               <Login/>
             </>
           }
@@ -117,7 +116,6 @@ function App() {
           exact path="/signup"
           element={
             <>
-              <Header/>
               <Register/>
             </>
           }

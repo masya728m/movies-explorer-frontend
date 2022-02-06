@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 74px;
+  min-height: 74px;
   font-weight: normal;
   font-style: normal;
   line-height: 16px;
@@ -49,6 +49,10 @@
   align-self: center;
 }
 
+.header_type_single {
+  padding: 0 !important;
+}
+
 
 @media screen and (max-width: 425px) {
   .header {
@@ -64,23 +68,11 @@
     width: 54px;
     height: 26px;
   }
-}
 
-@media screen and (min-width: 425px) {
-  .header__login-button {
-    width: 76px;
-    height: 32px;
-  }
-}
-
-@media screen and (min-width: 425px) and (max-width: 768px) {
-  .header {
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-
-  .header__side-container {
-    gap: 30px;
+  .header_type_single {
+    justify-content: space-around;
+    margin-top: 56px;
+    margin-bottom: 50px;
   }
 }
 
@@ -92,5 +84,32 @@
 
   .header__side-container {
     gap: 50px;
+  }
+
+  .header_type_single {
+    margin: 70px 0 40px;
+  }
+}
+
+
+@media screen and (min-width: 425px) and (max-width: 768px) {
+  .header {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .header__side-container {
+    gap: 30px;
+  }
+
+  .header_type_single {
+    margin: 232px 186px 40px 0;
+  }
+}
+
+@media screen and (min-width: 425px) {
+  .header__login-button {
+    width: 76px;
+    height: 32px;
   }
 }
