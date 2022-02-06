@@ -13,11 +13,20 @@
   line-height: 29px;
 }
 
+@media screen and (min-width: 768px) {
+  .input-form {
+    margin: 0 442px 0;
+
+  }
+}
+
 @media screen and (min-width: 425px) and (max-width: 768px) {
   .input-form {
     margin: 0 186px 0;
   }
+}
 
+@media screen and (min-width: 425px) {
   .input-form__title {
     align-self: flex-start;
     margin-bottom: 40px;

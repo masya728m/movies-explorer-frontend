@@ -27,7 +27,7 @@
   color: #FF6838;
 }
 
-@media screen and (min-width: 425px) and (max-width: 768px) {
+@media screen and (min-width: 425px) {
   .form-exit {
     margin: 16px 0 232px;
     gap: 6px;

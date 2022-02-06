@@ -51,6 +51,7 @@
 
 .header_type_single {
   padding: 0 !important;
+  min-height: 0 !important;
 }
 
 
