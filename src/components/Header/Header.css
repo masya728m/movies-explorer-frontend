@@ -24,6 +24,14 @@
   align-self: center;
 }
 
+.header__register-button, .header__login-button {
+  text-decoration: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: black;
+}
+
 .header__register-button {
   background-color: white;
   border: 0;
