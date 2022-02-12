@@ -1,0 +1,130 @@
+.navigation {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.navigation__link-button, .navigation__expand-button, .navigation__account-button, .navigation__links__exit-button {
+  background-color: white;
+  text-decoration: none;
+  color: black;
+  border: 0;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+}
+
+.navigation__links__exit-button {
+  background-image: url("../../images/exit-icon.svg");
+  background-repeat: no-repeat;
+  background-size: 22px;
+  width: 22px;
+  height: 22px;
+  margin-top: 13px;
+  margin-right: 13px;
+  margin-bottom: 105px;
+  align-self: flex-end;
+}
+
+.navigation__expand-button {
+  background-image: url("../../images/menu-icon.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 43px;
+}
+
+.navigation__account-button {
+  color: black;
+  background-color: #F9F9F9;
+  border-radius: 20px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100px;
+  height: 32px;
+}
+
+.navigation__link-button_type_active {
+  border-bottom: 2px solid black;
+}
+
+@media screen and (min-width: 768px) {
+  .navigation__links__exit-button, .navigation__expand-button {
+    display: none;
+  }
+
+  .navigation__links {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 44px;
+    gap: 16px;
+  }
+
+  .navigation__link-button {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 18px;
+    /* identical to box height, or 138% */
+
+    text-align: right;
+  }
+
+
+  .navigation__account-button {
+    margin-left: auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navigation__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 0;
+    right: 0;
+    position: fixed;
+    z-index: 3;
+    width: 100vw;
+    height: 100%;
+    background-color: white;
+    max-width: 520px;
+    cursor: pointer;
+    visibility: hidden;
+  }
+
+  .navigation__links::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -520px;
+    background: black;
+    opacity: 0.3;
+    z-index: 1;
+  }
+
+  .navigation__links_expanded {
+    visibility: visible;
+  }
+
+  .navigation__link-button {
+    padding-bottom: 7px;
+    margin-bottom: 15px;
+  }
+
+  .navigation__account-button {
+    margin-top: auto;
+    margin-bottom: 90px;
+  }
+}

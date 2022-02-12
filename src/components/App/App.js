@@ -6,12 +6,13 @@ import '../../vendor/fonts/fonts.css';
 import Footer from '../Footer/Footer';
 import Movies from '../Movies/Movies';
 import MoviesCard from '../MoviesCard/MoviesCard';
-import {Link, Route, Routes, useNavigate} from 'react-router-dom';
+import {Route, Routes, useLocation, useNavigate} from 'react-router-dom';
 import Profile from '../Profile/Profile';
 import Register from '../Register/Register';
 import Login from '../Login/Login';
-import React from 'react';
+import React, {useState} from 'react';
 import Header from '../Header/Header';
+import Navigation from '../Navigation/Navigation';
 
 function App() {
   let movies = [];
@@ -25,26 +26,36 @@ function App() {
     });
 
   const navigate = useNavigate();
+  const [loggedIn, setLoggedIn] = useState(false);
+  const location = useLocation();
 
   React.useEffect(() => {
     navigate('/');
+    setLoggedIn(false);
   }, []);
+
+  const handleLoginSubmit = (inputValues) => {
+    navigate('/movies');
+    setLoggedIn(true);
+  };
+
+  const handleRegisterSubmit = (inputValues) => {
+    navigate('/signin');
+  };
 
   return (
     <div className="app">
+      {
+        !location.pathname.startsWith('/sign') &&
+        <Header>
+          <Navigation loggedIn={loggedIn}/>
+        </Header>
+      }
       <Routes>
         <Route
           exact path="/movies"
-          components={
+          element={
             <>
-              <Link to="/signup" type="button" className="header__register-button">
-                Регистрация
-              </Link>
-              <Link to="/signin" type="button" className="header__login-button">
-                Войти
-              </Link>
-              <Header>
-              </Header>
               <Movies>
                 {
                   movies.map(
@@ -68,14 +79,6 @@ function App() {
           exact path="/saved-movies"
           element={
             <>
-              <Link to="/signup" type="button" className="header__register-button">
-                Регистрация
-              </Link>
-              <Link to="/signin" type="button" className="header__login-button">
-                Войти
-              </Link>
-              <Header>
-              </Header>
               <Movies>
                 {
                   movies.map(
@@ -99,39 +102,22 @@ function App() {
           exact path="/profile"
           element={
             <>
-              <Header/>
-              <Profile/>
+              <Profile title="Ну здарова!"/>
             </>
           }
         />
         <Route
           exact path="/signin"
-          element={
-            <>
-              <Login/>
-            </>
-          }
+          element={<Login onSubmit={handleLoginSubmit}/>}
         />
         <Route
           exact path="/signup"
-          element={
-            <>
-              <Register/>
-            </>
-          }
+          element={<Register/>}
         />
         <Route
           exact path="/"
           element={
             <>
-              <Header>
-                <Link to="/signup" type="button" className="header__register-button">
-                  Регистрация
-                </Link>
-                <Link to="/signin" type="button" className="header__login-button">
-                  Войти
-                </Link>
-              </Header>
               <Main/>
               <Footer/>
             </>

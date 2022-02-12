@@ -6,9 +6,7 @@ function Header(props) {
     <header className={`header ${props.onlyLogo && 'header_type_single'}`}>
       <img src={logo} className="header__logo" alt="logo"/>
       {!props.onlyLogo && (
-        <div className="header__side-container">
-          {props.children ? props.children : (<></>)}
-        </div>
+        props.children ? props.children : (<></>)
       )}
     </header>
   );

@@ -1,10 +1,23 @@
 import './Profile.css';
+import ProfileInputField from '../ProfileInputField/ProfileInputField';
 
 function Profile(props) {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  }
   return (
-    <div>
-
-    </div>
+    <form onSubmit={handleSubmit} className="profile">
+      <h2 className="profile__title">{props.title}</h2>
+      <ProfileInputField name="Имя"/>
+      <div className="profile__separator-line"/>
+      <ProfileInputField name="E-mail"/>
+      <button className="profile__edit-button">
+        Редактировать
+      </button>
+      <button className="profile__exit-button">
+        Выйти из аккаунта
+      </button>
+    </form>
   );
 }
 
