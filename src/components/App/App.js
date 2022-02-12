@@ -3,7 +3,6 @@ import '../Header/Header';
 import Main from '../Main/Main';
 import '../../vendor/normalize.css';
 import '../../vendor/fonts/fonts.css';
-import Footer from '../Footer/Footer';
 import Movies from '../Movies/Movies';
 import MoviesCard from '../MoviesCard/MoviesCard';
 import {Route, Routes, useLocation, useNavigate} from 'react-router-dom';
@@ -13,6 +12,7 @@ import Login from '../Login/Login';
 import React, {useState} from 'react';
 import Header from '../Header/Header';
 import Navigation from '../Navigation/Navigation';
+import Footer from '../Footer/Footer';
 
 function App() {
   let movies = [];
@@ -55,56 +55,46 @@ function App() {
         <Route
           exact path="/movies"
           element={
-            <>
-              <Movies>
-                {
-                  movies.map(
-                    (movie) =>
-                      (
-                        <MoviesCard
-                          key={movie._id}
-                          title={movie.title}
-                          duration={movie.duration}
-                          image={movie.image}
-                        />
-                      )
-                  )
-                }
-              </Movies>
-              <Footer/>
-            </>
+            <Movies>
+              {
+                movies.map(
+                  (movie) =>
+                    (
+                      <MoviesCard
+                        key={movie._id}
+                        title={movie.title}
+                        duration={movie.duration}
+                        image={movie.image}
+                      />
+                    )
+                )
+              }
+            </Movies>
           }
         />
         <Route
           exact path="/saved-movies"
           element={
-            <>
-              <Movies>
-                {
-                  movies.map(
-                    (movie) =>
-                      (
-                        <MoviesCard
-                          key={movie._id}
-                          title={movie.title}
-                          duration={movie.duration}
-                          image={movie.image}
-                        />
-                      )
-                  )
-                }
-              </Movies>
-              <Footer/>
-            </>
+            <Movies>
+              {
+                movies.map(
+                  (movie) =>
+                    (
+                      <MoviesCard
+                        key={movie._id}
+                        title={movie.title}
+                        duration={movie.duration}
+                        image={movie.image}
+                      />
+                    )
+                )
+              }
+            </Movies>
           }
         />
         <Route
           exact path="/profile"
-          element={
-            <>
-              <Profile title="Ну здарова!"/>
-            </>
-          }
+          element={<Profile title="Ну здарова!"/>}
         />
         <Route
           exact path="/signin"
@@ -112,18 +102,17 @@ function App() {
         />
         <Route
           exact path="/signup"
-          element={<Register/>}
+          element={<Register onSubmit={handleRegisterSubmit}/>}
         />
         <Route
           exact path="/"
-          element={
-            <>
-              <Main/>
-              <Footer/>
-            </>
-          }
+          element={<Main/>}
         />
       </Routes>
+      {
+        !location.pathname.startsWith('/sign') &&
+        <Footer/>
+      }
     </div>
   );
 }
