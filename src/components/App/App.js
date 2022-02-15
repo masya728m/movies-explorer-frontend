@@ -15,18 +15,20 @@ import Navigation from '../Navigation/Navigation';
 import Footer from '../Footer/Footer';
 
 function App() {
-  let movies = [];
+  let movieCards = [];
 
   for (let i = 0; i < 8; ++i)
-    movies.push({
-      _id: i,
+    movieCards.push({
+      _id: i * 100,
       title: 'ПУЛЯ: Возвращение',
       duration: 60 * 60,
+      saved: false,
       image: 'https://i.ytimg.com/vi/mM4DOcfW44E/hqdefault.jpg'
     });
 
   const navigate = useNavigate();
   const [loggedIn, setLoggedIn] = useState(false);
+  const [movies, setMovies] = useState(movieCards);
   const location = useLocation();
 
   React.useEffect(() => {
@@ -53,6 +55,17 @@ function App() {
     navigate('/');
   };
 
+  const handleMovieSave = (movieId) => {
+    const newMovies = Array.from(movies)
+      .map(movieCard => movieCard._id === movieId
+        ? {
+          ...movieCard,
+          saved: !movieCard.saved
+        }
+        : movieCard);
+    setMovies(newMovies);
+  };
+
   return (
     <div className="app">
       {
@@ -71,10 +84,13 @@ function App() {
                   (movie) =>
                     (
                       <MoviesCard
+                        onSave={handleMovieSave}
                         key={movie._id}
+                        movieId={movie._id}
                         title={movie.title}
                         duration={movie.duration}
                         image={movie.image}
+                        saved={movie.saved}
                       />
                     )
                 )
@@ -87,14 +103,16 @@ function App() {
           element={
             <Movies>
               {
-                movies.map(
+                movies.filter(movie => movie.saved).map(
                   (movie) =>
                     (
                       <MoviesCard
+                        onSave={handleMovieSave}
                         key={movie._id}
                         title={movie.title}
                         duration={movie.duration}
                         image={movie.image}
+                        saved={true}
                       />
                     )
                 )
