@@ -4,6 +4,10 @@ import ProfileInputField from '../ProfileInputField/ProfileInputField';
 function Profile(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
+    props.onProfileEdit();
+  }
+  const handleExit = () => {
+    props.onExit();
   }
   return (
     <form onSubmit={handleSubmit} className="profile">
@@ -11,10 +15,10 @@ function Profile(props) {
       <ProfileInputField name="Имя"/>
       <div className="profile__separator-line"/>
       <ProfileInputField name="E-mail"/>
-      <button className="profile__edit-button">
+      <button type="submit" className="profile__edit-button">
         Редактировать
       </button>
-      <button className="profile__exit-button">
+      <button onClick={handleExit} className="profile__exit-button">
         Выйти из аккаунта
       </button>
     </form>

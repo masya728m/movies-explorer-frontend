@@ -32,6 +32,7 @@ function App() {
   React.useEffect(() => {
     navigate('/');
     setLoggedIn(false);
+    /** TODO: add business logic */
   }, []);
 
   const handleLoginSubmit = (inputValues) => {
@@ -41,6 +42,15 @@ function App() {
 
   const handleRegisterSubmit = (inputValues) => {
     navigate('/signin');
+  };
+
+  const handleProfileEdit = (inputvalues) => {
+    /** TODO: add business logic */
+  };
+
+  const handleExit = () => {
+    setLoggedIn(false);
+    navigate('/');
   };
 
   return (
@@ -94,7 +104,7 @@ function App() {
         />
         <Route
           exact path="/profile"
-          element={<Profile title="Ну здарова!"/>}
+          element={<Profile onProfileEdit={handleProfileEdit} onExit={handleExit} title="Ну здарова!"/>}
         />
         <Route
           exact path="/signin"

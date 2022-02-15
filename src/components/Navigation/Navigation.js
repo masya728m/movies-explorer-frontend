@@ -13,14 +13,14 @@ function Navigation(props) {
 
   if (!props.loggedIn)
     return (
-      <>
-        <Link to="/signup" type="button" className="header__register-button">
+      <div className="navigation__side-container">
+        <Link to="/signup" type="button" className="navigation__register-button">
           Регистрация
         </Link>
-        <Link to="/signin" type="button" className="header__button">
+        <Link to="/signin" type="button" className="navigation__button">
           Войти
         </Link>
-      </>
+      </div>
     );
 
   return (

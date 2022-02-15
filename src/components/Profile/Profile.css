@@ -12,6 +12,7 @@
   background: none;
   font-style: normal;
   font-weight: normal;
+  cursor: pointer;
 }
 
 .profile__exit-button {

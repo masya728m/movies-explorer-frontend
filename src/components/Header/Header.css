@@ -24,31 +24,6 @@
   align-self: center;
 }
 
-.header__register-button, .header__button {
-  text-decoration: none;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  color: black;
-}
-
-.header__register-button {
-  background-color: white;
-  border: 0;
-  margin: 0;
-  padding: 0;
-  align-self: center;
-}
-
-.header__button {
-  background-color: #2BE080;
-  border: 0;
-  margin: 0;
-  padding: 0;
-  border-radius: 3px;
-  align-self: center;
-}
-
 .header_type_single {
   padding: 0 !important;
   min-height: 0 !important;
@@ -63,11 +38,6 @@
 
   .header__side-container {
     gap: 14px;
-  }
-
-  .header__button {
-    width: 54px;
-    height: 26px;
   }
 
   .header_type_single {
@@ -105,12 +75,5 @@
 
   .header_type_single {
     margin: 232px 186px 40px 0;
-  }
-}
-
-@media screen and (min-width: 425px) {
-  .header__button {
-    width: 76px;
-    height: 32px;
   }
 }
