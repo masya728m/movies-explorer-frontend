@@ -11,6 +11,10 @@ function Navigation(props) {
     setExpandMenu(!expandMenu);
   };
 
+  const handleNavigationClose = () => {
+    setExpandMenu(false);
+  };
+
   if (!props.loggedIn)
     return (
       <div className="navigation__side-container">
@@ -26,7 +30,7 @@ function Navigation(props) {
   return (
     <div className="navigation">
       <button onClick={handleExpandButtonClick} className="navigation__expand-button"/>
-      <div className={`navigation__links ${expandMenu && 'navigation__links_expanded'}`}>
+      <div onClick={handleNavigationClose} className={`navigation__links ${expandMenu && 'navigation__links_expanded'}`}>
         <button onClick={handleExpandButtonClick} className="navigation__links__exit-button"/>
         <Link
           to="/"

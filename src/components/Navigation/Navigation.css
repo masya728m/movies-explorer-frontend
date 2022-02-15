@@ -90,6 +90,14 @@
   height: 32px;
 }
 
+.navigation__links {
+  pointer-events: none;
+}
+
+.navigation__links::after {
+  pointer-events: initial;
+}
+
 .navigation__link-button_type_active {
   border-bottom: 2px solid black;
 }
