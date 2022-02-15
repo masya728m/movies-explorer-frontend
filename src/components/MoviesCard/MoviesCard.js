@@ -11,7 +11,7 @@ function MoviesCard(props) {
     <div className="movies-card">
       <h2 className="movies-card__title">{props.title}</h2>
       <button onClick={handleSaveButtonClick}
-              className={`movies-card__save-button ${props.saved && 'movies-card__save_button_type_active'}`}/>
+              className={`${props.displayDeleteButton ? 'movies-card__delete-button' : 'movies-card__save-button'} ${props.saved && 'movies-card__save_button_type_active'}`}/>
       <h2 className="movies-card__duration">
         {
           (hours) ? `${hours}ч ` : '' +

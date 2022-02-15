@@ -109,10 +109,11 @@ function App() {
                       <MoviesCard
                         onSave={handleMovieSave}
                         key={movie._id}
+                        movieId={movie._id}
                         title={movie.title}
                         duration={movie.duration}
                         image={movie.image}
-                        saved={true}
+                        displayDeleteButton={true}
                       />
                     )
                 )
