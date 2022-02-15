@@ -7,10 +7,6 @@ function Navigation(props) {
 
   const [expandMenu, setExpandMenu] = React.useState(false);
 
-  React.useEffect(() => {
-    console.log(location.pathname);
-  }, [location]);
-
   const handleExpandButtonClick = () => {
     setExpandMenu(!expandMenu);
   };
@@ -49,7 +45,7 @@ function Navigation(props) {
         </Link>
         <Link
           to="/profile" type="button"
-          className="navigation__account-button ">
+          className={`navigation__account-button ${location.pathname === '/profile' && 'navigation__account-button_type_active'}`}>
           Аккаунт
         </Link>
       </div>

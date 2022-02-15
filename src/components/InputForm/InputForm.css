@@ -1,6 +1,7 @@
 .input-form {
   display: flex;
   flex-direction: column;
+  justify-items: center;
 }
 
 .input-form__title {
@@ -13,16 +14,11 @@
   line-height: 29px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 425px) {
   .input-form {
-    margin: 0 442px 0;
-
-  }
-}
-
-@media screen and (min-width: 425px) and (max-width: 768px) {
-  .input-form {
-    margin: 0 186px 0;
+    margin: 0 auto  0;
+    max-width: 396px;
+    width: 80vw;
   }
 }
 
