@@ -11,7 +11,7 @@ function Movies(props) {
   return (
     <main>
       <SearchForm/>
-      <MoviesCardList>
+      <MoviesCardList showFullList={showMore}>
         {props.children}
       </MoviesCardList>
       {!showMore && <button onClick={handleExpandButtonClick} className="movies__expand-button">Ещё</button>}

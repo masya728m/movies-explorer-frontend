@@ -17,9 +17,9 @@ import Footer from '../Footer/Footer';
 function App() {
   let movieCards = [];
 
-  for (let i = 0; i < 8; ++i)
+  for (let i = 0; i < 20; ++i)
     movieCards.push({
-      _id: i * 100,
+      _id: i,
       title: 'ПУЛЯ: Возвращение',
       duration: 60 * 60,
       saved: false,
