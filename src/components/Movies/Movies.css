@@ -1,0 +1,22 @@
+.movies__expand-button {
+  margin: 50px auto 80px;
+  max-width: 320px;
+  width: 70%;
+  height: 36px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  border: 1px solid #E8E8E8;
+  background-color: white;
+}
+
+@media screen and (max-width: 425px) {
+  .movies__expand-button {
+    max-width: 240px;
+  }
+}
