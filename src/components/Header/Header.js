@@ -1,10 +1,10 @@
 import './Header.css';
-import logo from '../../images/logo.svg';
+import {Link} from 'react-router-dom';
 
 function Header(props) {
   return (
     <header className={`header ${props.onlyLogo && 'header_type_single'}`}>
-      <img src={logo} className="header__logo" alt="logo"/>
+      <Link to="/" className="header__logo"/>
       {!props.onlyLogo && (
         props.children ? props.children : (<></>)
       )}
