@@ -104,7 +104,7 @@
 }
 
 @media screen and (min-width: 768px) {
-  .navigation__links__exit-button, .navigation__expand-button {
+  .navigation__links__exit-button, .navigation__expand-button, .navigation__link-button_type_main {
     display: none;
   }
 

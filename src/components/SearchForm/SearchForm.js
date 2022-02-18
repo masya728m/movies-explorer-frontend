@@ -10,7 +10,7 @@ function SearchForm(props) {
   return (
     <form className="search-form" onSubmit={handleSubmit}>
       <img src={searchIcon} className="search-form__icon" alt="search-icon"/>
-      <input type="text" className="search-form__input" placeholder="Фильм"/>
+      <input type="text" className="search-form__input" placeholder="Фильм" required/>
       <button type="submit" className="search-form__submit-button"/>
       <Preloader/>
     </form>

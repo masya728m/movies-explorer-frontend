@@ -34,7 +34,7 @@ function Navigation(props) {
         <button onClick={handleExpandButtonClick} className="navigation__links__exit-button"/>
         <Link
           to="/"
-          className={`navigation__link-button ${location.pathname === '/' && 'navigation__link-button_type_active'}`}>
+          className={`navigation__link-button navigation__link-button_type_main ${location.pathname === '/' && 'navigation__link-button_type_active'}`}>
           Главная
         </Link>
         <Link

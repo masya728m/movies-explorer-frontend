@@ -1,13 +1,16 @@
 import './Movies.css';
 import SearchForm from '../SearchForm/SearchForm';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 
 function Movies(props) {
   const [showMore, setShowMore] = useState(false);
   const handleExpandButtonClick = () => {
     setShowMore(true);
   }
+  useEffect(() => {
+    setShowMore(false);
+  }, [props.render])
   return (
     <main>
       <SearchForm/>

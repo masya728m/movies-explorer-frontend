@@ -29,6 +29,7 @@ function App() {
   const navigate = useNavigate();
   const [loggedIn, setLoggedIn] = useState(false);
   const [movies, setMovies] = useState(movieCards);
+  const [renderMovies, setRenderMovies] = useState(false);
   const location = useLocation();
 
   React.useEffect(() => {
@@ -36,6 +37,14 @@ function App() {
     setLoggedIn(false);
     /** TODO: add business logic */
   }, []);
+
+  React.useEffect(() => {
+    console.log(location);
+    if (location.pathname.includes('movies'))
+    {
+      setRenderMovies(!renderMovies);
+    }
+  }, [location])
 
   const handleLoginSubmit = (inputValues) => {
     navigate('/movies');
@@ -76,9 +85,10 @@ function App() {
       }
       <Routes>
         <Route
+          key="movies"
           exact path="/movies"
           element={
-            <Movies>
+            <Movies render={renderMovies}>
               {
                 movies.map(
                   (movie) =>
@@ -99,9 +109,10 @@ function App() {
           }
         />
         <Route
+          key="saved-movies"
           exact path="/saved-movies"
           element={
-            <Movies>
+            <Movies render={renderMovies}>
               {
                 movies.filter(movie => movie.saved).map(
                   (movie) =>
